@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  title: user management api
+  version: '1.0'
+  description: ''
+  contact:
+    name: rich
+    email: rich.lee@cathayholdings.com
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /users:
+    get:
+      summary: get all users
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  age:
+                    type: integer
+              examples:
+                example-1:
+                  value:
+                    id: '1234'
+                    name: rich
+                    age: 30
+      operationId: get-users
+    post:
+      summary: create a user
+      tags: []
+      responses: {}
+      operationId: post-users
+components:
+  schemas: {}
+  securitySchemes: {}
