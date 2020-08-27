@@ -19,21 +19,27 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  id:
-                    type: string
-                  name:
-                    type: string
-                  age:
-                    type: integer
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    age:
+                      type: integer
               examples:
                 example-1:
                   value:
-                    id: '1234'
-                    name: rich
-                    age: 30
+                    - id: '1234'
+                      name: rich
+                      age: 30
+                    - id: '2345'
+                      name: jack
+                      age: 20
       operationId: get-users
+      description: get all users
     post:
       summary: create a user
       tags: []
